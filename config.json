@@ -1,0 +1,39 @@
+{
+    "InputParameters": {
+        "frameProcTime": 0.000001,
+        "transmissionTime": 0.001,
+        "localTransmissionTime": 0.001,
+        "cpriFrameGenerationTime": 0.066,
+        "numberOfRU": 40,
+        "alloc_type": "wavelength"
+    },
+    "Algorithm": {
+        "name": "RL",
+        "memory_capacity": 100000,
+        "target_update": 2000,
+        "filter_num": 512,
+        "start_learning": 100,
+        "batch_size": 256,
+        "epsilon_decay": 3000
+    },
+    "ProcessingNodes": [
+        {
+            "aId": "Cloud:0",
+            "aType": "Cloud",
+            "wavelengths_capacity": 10000,
+            "wavelengths": 4
+        },
+        {
+            "aId": "Fog:0",
+            "aType": "Fog",
+            "wavelengths_capacity": 10000,
+            "wavelengths": 2
+        },
+        {
+            "aId": "Fog:1",
+            "aType": "Fog",
+            "wavelengths_capacity": 10000,
+            "wavelengths": 2
+        }
+    ]
+}
